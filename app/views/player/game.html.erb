@@ -1,0 +1,21 @@
+<h1>Player#game</h1>
+<p>Find me in app/views/player/game.html.erb</p>
+
+
+<%=  "******** Welcome to the longest word-game!********" %>
+<%=  "Here is your grid:" %>
+
+<%=  @grid.join(" ") %>
+ <p> ***************************************************** </p>
+
+<%= "What's your best shot?" %>
+
+
+<p> ******** Now your result ******** </p>
+
+<form action="/player/score" method="get">
+ <input type="hidden" name="start_time" value="<%=Time.now%>" >
+ <input type="text" name="query">
+ <input type="hidden" name="grid" value="<%=@grid.join(" ")%>" >
+</form>
+
